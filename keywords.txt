@@ -1,0 +1,14 @@
+MiniSobot KEYWORD1
+
+drive_forward KEYWORD2
+drive_backward KEYWORD2
+drive_break KEYWORD2
+drive_curve_right KEYWORD2
+drive_curve_left KEYWORD2
+drive_curve_differential_right KEYWORD2
+drive_curve_differential_left KEYWORD2
+led_rgb  KEYWORD2
+buzzer KEYWORD2
+read_button KEYWORD2
+read_ultrasonic KEYWORD2
+read_line KEYWORD2
