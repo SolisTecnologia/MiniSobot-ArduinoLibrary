@@ -140,17 +140,20 @@ void loop (){
 
 // Introduction
 void intro (){
+    
+    robot.read_ultrasonic(); // Initialize the ultrasonic sensor
+
     robot.led_rgb(255,0,0); // Turn LED RED on 
-    robot.buzzer(262,500); // Dó 
+    robot.buzzer(262,500); // C (Dó) 
 
     robot.led_rgb(0,255,0); // Turn LED GREEN on 
-    robot.buzzer(294,500); // Ré 
+    robot.buzzer(294,500); // D (Ré) 
 
     robot.led_rgb(0,0,255); // Turn LED BLUE on 
-    robot.buzzer(330,500); // Mi
+    robot.buzzer(330,500); // E (Mi)
    
     robot.led_rgb(255,255,255); // Turn LED WHITE on 
-    robot.buzzer(392,500); // Fá
+    robot.buzzer(392,500); // F (Fá)
 }
 
 // Safe Car Mode
