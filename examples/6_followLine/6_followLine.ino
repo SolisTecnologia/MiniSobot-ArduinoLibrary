@@ -1,7 +1,7 @@
 /****************************************************************************
 MiniSobot Library
 Created By   : Rodrigo L. de Carvalho
-Version      : 1.0
+Version      : 1.1
 Company      : Solis Tecnologia
 
 followLine.ino :
@@ -44,8 +44,6 @@ void loop (){
     // When the current data is different at past data, is needed change the direction
     if ((flag_sensor_line_left != left)||(flag_sensor_line_right != right)){
         
-        robot.led_rgb(0,0,255); // Turn on led Blue
-
         // When right sensor and left sensor are detecting the line, the robot moves forward  
         if (right == 0 && left == 0){
             robot.drive_forward(150);  // Moves robot forward    
