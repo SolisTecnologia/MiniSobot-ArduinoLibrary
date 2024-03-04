@@ -1,7 +1,7 @@
 /****************************************************************************
 MiniSobot Library
 Created By   : Rodrigo L. de Carvalho
-Version      : 1.0
+Version      : 1.1
 Company      : Solis Tecnologia
 
 defaultApplication.ino :
@@ -81,7 +81,8 @@ float distance = 0; // Variable to distance store
 #define STOP_DISTANCE 15 // Define stop distance
 #define REDUCE_SPEED_DISTANCE 30 // Define reduce speed distance
 
-int flag_change_direction = 0; // Variables to change direction moves
+int flag_safe_direction = 0; // Flag to cahnge the safe moves 
+int flag_change_direction = 0; // Flag to change direction moves
 
 int flag_sensor_line_left = 2; // Flag to change direction just one time 
 int flag_sensor_line_right = 2; // Flag to change direction just one time 
@@ -164,32 +165,40 @@ void mode_safe_car(){
 
     // When the Minibot approaches an obstacle, it reduces its speed
     if ((distance <= REDUCE_SPEED_DISTANCE) &&( distance > STOP_DISTANCE)) {
-
-            robot.drive_forward(90); // Moves Forward
-            flag_change_direction = 1; // Set the flag True
-        
+            robot.drive_forward(100); // Moves Forward
+            flag_safe_direction = 1; // Set the flag True     
     }
 
     // When the Minibot is too  close an obstacle, it stop 
     else if (distance <= STOP_DISTANCE) {
+      
+        robot.drive_break(); // Stop the motors
+        delay(200); // Wait a two hundred milli seconds;
+        
+        // When flag is 2, change the direction move and reset the flag
+        if(flag_change_direction == 2){
+          robot.drive_curve_right(255);   // Make a turn to the right 
+          delay(500); // Wait a half second
+          flag_change_direction = 0; // Set the flag False
+        }
+      
+        else{
+          flag_change_direction++; // Increment the flag
+          robot.drive_curve_left(255); // Make a turn to the left
+          delay(500); // Wait a half second
+        }
 
-            robot.drive_break(); // Stop the motors
-            delay(1000);    // Wait a second 
-
-            robot.drive_curve_right(255);   
-            delay(500); // Wait a half second
-
-            flag_change_direction = 0; // Set the flag False
+        flag_safe_direction = 0; // Set the flag False
         
     }
     else {
-        if (flag_change_direction == 0){
+        if (flag_safe_direction == 0){
 
             robot.drive_break(); // Stop the motors
-            delay(1000);
-            flag_change_direction = 1; // Set the flag True
+            delay(500);
+            flag_safe_direction = 1; // Set the flag True
         }
-            robot.drive_forward(160);  // Moves Forward
+            robot.drive_forward(200);  // Moves Forward
     }
     delay(100); // Wait a 100 ms
 
