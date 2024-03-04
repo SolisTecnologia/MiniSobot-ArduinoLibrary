@@ -1,7 +1,7 @@
 /****************************************************************************   
 MiniSobot Library
 Created By   : Rodrigo L. de Carvalho
-Version      : 1.0
+Version      : 1.1
 Company      : Solis Tecnologia
 
 buzzerTones.ino :
@@ -33,14 +33,14 @@ void setup(){
 void loop (){
 
     int time = 500; // Set the time duration of notes like 500 ms
-    robot.buzzer(262,time); // Dó
-    robot.buzzer(294,time); // Ré
-    robot.buzzer(330,time); // Mi
-    robot.buzzer(349,time); // Fá
-    robot.buzzer(392,time); // Sol
-    robot.buzzer(440,time); // lá
-    robot.buzzer(494,time); // Si
-    robot.buzzer(528,time); // #Dó
+    robot.buzzer(262,time); // C (Dó)
+    robot.buzzer(294,time); // D (Ré)
+    robot.buzzer(330,time); // E (Mi)
+    robot.buzzer(349,time); // F (Fá)
+    robot.buzzer(392,time); // G (Sol)
+    robot.buzzer(440,time); // A (lá)
+    robot.buzzer(494,time); // B (Si)
+    robot.buzzer(528,time); // C# (Dó#)
     delay(1000); // Wait a second for repeat
 
 }
