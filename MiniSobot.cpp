@@ -8,7 +8,7 @@ Company: Solis Tecnologia
 
 ****************************************************************************/
 #include "Arduino.h"
-#include "Minisobot.h"
+#include "MiniSobot.h"
 
 MiniSobot::MiniSobot(int led_blue_pin = 3, int led_red_pin = 5, int led_green_pin = 6,
     int motor1_in1_pin = 7, int motor1_in2_pin = 8, int motor1_pwm_pin = 9, int buzzer_pin = 10,
