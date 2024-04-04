@@ -106,20 +106,19 @@ void loop (){
 
 #### Description
 
-Drive in forward, at speed and duration defined by parameter, the range of speed values go 0 to 255, but values below 100 not are recommended. If you not set the speed parameter, default values are be used (255) and  if the duration is not set, the robot will moves forward forever.
+Drive in forward, at speed defined by parameter, the range of speed values go 0 to 255, but values below 80 not are recommended. 
+If you not set the speed parameter, default values are be used (150).
 
 #### Syntax
 
 ~~~cpp 
-robot.drive_forward(speed, duration);
 robot.drive_forward(speed);
 robot.drive_forward();
 ~~~
 
 #### Parameters
 - robot - a variable of type MiniSobot
-- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 100 not are recommended, default: 255
-- duration (optional) - duration that will moves 
+- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 80 not are recommended, default: 150
 #### Example
 
 ~~~cpp
@@ -140,20 +139,18 @@ void loop (){
 
 #### Description
 
-Drive in backward, at speed and duration defined by parameter, the range of speed values go 0 to 255, but values below 100 not are recommended. If you not set the speed parameter, default values are be used (255) and  if the duration is not set, the robot will moves forward forever.
+Drive in backward, at speed and duration defined by parameter, the range of speed values go 0 to 255, but values below 80 not are recommended. If you not set the speed parameter, default values are be used (150) and  if the duration is not set, the robot will moves forward forever.
 
 #### Syntax
 
 ~~~cpp 
-robot.drive_backward(speed, duration);
 robot.drive_backward(speed);
 robot.drive_backward();
 ~~~
 
 #### Parameters
 - robot - a variable of type MiniSobot
-- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 100 not are recommended, default: 255
-- duration (optional) - duration that will moves 
+- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 80 not are recommended, default: 150
 #### Example
 
 ~~~cpp
@@ -210,7 +207,7 @@ void loop (){
 ### drive_curve_right()
 
 #### Description
-Make a turn to the RIGHT, in the same axis, speed is defined by parameter, the range of values go 0 to 255, but values below 100 not are recommended. If you not set the speed parameter, default values are be used (255).
+Make a turn to the RIGHT, in the same axis, speed is defined by parameter, the range of values go 0 to 255, but values below 100 not are recommended. If you not set the speed parameter, default values are be used (150).
     
 #### Syntax
 ~~~cpp
@@ -219,7 +216,7 @@ robot.drive_curve_right(int speed);
 
 #### Parameters
 - robot - a variable of type MiniSobot
-- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 100 not are recommended, default: 255
+- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 100 not are recommended, default: 150
 
 #### Example
 ~~~cpp
@@ -241,7 +238,7 @@ void loop (){
 ### drive_curve_left()
 
 #### Description
-Make a turn to the LEFT, in the same axis, speed is defined by parameter, the range of values go 0 to 255, but values below 100 not are recommended. If you not set the speed parameter, default values are be used (255).
+Make a turn to the LEFT, in the same axis, speed is defined by parameter, the range of values go 0 to 255, but values below 100 not are recommended. If you not set the speed parameter, default values are be used (150).
     
 #### Syntax
 ~~~cpp
@@ -250,7 +247,7 @@ robot.drive_curve_left(int speed);
 
 #### Parameters
 - robot - a variable of type MiniSobot
-- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 100 not are recommended, default: 255
+- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 100 not are recommended, default: 150
 #### Example
 ~~~cpp
  #include "MiniSobot.h"
@@ -272,7 +269,7 @@ void loop (){
 
 #### Description
 
-Make a turn to the LEFT, use differential drive, speed is defined by parameter, the range of values go 0 to 255, but values below 100 not are recommended. If you not set the speed parameter, default values are be used (255). Also have "percent" parameter this defined a speed percent referent a motor2. Eg: drive_curve_differential_left(255, 50)  ->  Motor2 Speed: 255 | Motor1 Speed: 255*50% = 127
+Make a turn to the LEFT, use differential drive, speed is defined by parameter, the range of values go 0 to 255, but values below 100 not are recommended. If you not set the speed parameter, default values are be used (150). Also have "percent" parameter this defined a speed percent referent a motor2. Eg: drive_curve_differential_left(255, 50)  ->  Motor2 Speed: 255 | Motor1 Speed: 255*50% = 127
     
 
 #### Syntax
@@ -282,7 +279,7 @@ robot.drive_curve_differential_left(speed, percent);
 
 #### Parameters
 - robot - a variable of type MiniSobot
-- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 100 not are recommended, default: 255
+- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 100 not are recommended, default: 150
 - percent - Speed percent referent a motor2. Range is 0 to 100. The lower the value, the smaller the curve angle.
 
 #### Example
@@ -306,7 +303,7 @@ void loop (){
 
 #### Description
 
-Make a turn to the RIGHT, use differential drive, speed is defined by parameter, the range of values go 0 to 255, but values below 100 not are recommended. If you not set the speed parameter, default values are be used (255). Also have "percent" parameter this defined a speed percent referent a motor1. Eg: drive_curve_differential_right(255, 50)  ->  Motor1 Speed: 255 | Motor2 Speed: 255*50% = 127
+Make a turn to the RIGHT, use differential drive, speed is defined by parameter, the range of values go 0 to 255, but values below 100 not are recommended. If you not set the speed parameter, default values are be used (150). Also have "percent" parameter this defined a speed percent referent a motor1. Eg: drive_curve_differential_right(255, 50)  ->  Motor1 Speed: 255 | Motor2 Speed: 255*50% = 127
     
 
 #### Syntax
@@ -316,7 +313,7 @@ robot.drive_curve_differential_right(speed, percent);
 
 #### Parameters
 - robot - a variable of type MiniSobot
-- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 100 not are recommended, default: 255
+- speed (optional) - speed of MiniSobot move - range is 0 to 255, but values below 100 not are recommended, default: 150
 - percent - Speed percent referent a motor1. Range is 0 to 100. The lower the value, the smaller the curve angle.
 
 #### Example
@@ -415,6 +412,39 @@ void loop (){
     robot.buzzer(440,time);
     robot.buzzer(494,time);
     robot.buzzer(528,time);
+    delay(1000);
+}
+~~~
+---
+### stop_buzzer()
+#### Description
+
+Stop Buzzer manually
+
+#### Syntax
+~~~cpp
+robot.stop_buzzer();
+~~~
+
+#### Parameters
+- robot - a variable of type MiniSobot
+
+
+#### Example
+~~~cpp
+ #include "MiniSobot.h"
+
+MiniSobot robot;
+
+void setup(){
+    
+}
+
+void loop (){
+
+    robot.buzzer(262);
+    delay(1000);
+    robot.stop_buzzer(); 
     delay(1000);
 }
 ~~~

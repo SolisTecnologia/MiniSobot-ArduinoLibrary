@@ -3,7 +3,7 @@
 MiniSobot Library - MiniSobot.C
 MiniSobot Library
 Created By   : Rodrigo L. de Carvalho
-Version      : 1.0
+Version      : 1.1
 Company: Solis Tecnologia
 
 ****************************************************************************/
@@ -53,7 +53,7 @@ MiniSobot::MiniSobot(int led_blue_pin = 3, int led_red_pin = 5, int led_green_pi
   
   }
 
-  void MiniSobot::led_rgb (int R, int G, int B, int disable){
+  void MiniSobot::led_rgb (int R, int G, int B, int disable = 0){
 
   if (!(disable)){
     analogWrite(led_red, R);
@@ -68,7 +68,7 @@ MiniSobot::MiniSobot(int led_blue_pin = 3, int led_red_pin = 5, int led_green_pi
 }
 
 
-void MiniSobot::buzzer(int frequency, int duration){
+void MiniSobot::buzzer(int frequency = 262, int duration = 0){
    noTone(_buzzer);
   if (duration > 0){
    tone(_buzzer, frequency, duration);
@@ -76,6 +76,10 @@ void MiniSobot::buzzer(int frequency, int duration){
    noTone(_buzzer);
   }  
   else tone(_buzzer, frequency);
+}
+
+void MiniSobot::stop_buzzer(){
+   noTone(_buzzer);
 }
 
 int MiniSobot::read_button(){
@@ -105,30 +109,18 @@ int MiniSobot::read_line(int sensor){
   return temp;
 }
 
-
-
-
-void MiniSobot::drive_forward(int speed = 255, int duration = 0){
+void MiniSobot::drive_forward(int speed = 150){
 
 fwd_motor1(speed);
 fwd_motor2(speed);
 
-if (duration > 0){
-  delay(duration);
-  drive_break();
-}
 }
 
-
-void MiniSobot::drive_backward(int speed = 255, int duration = 0){
+void MiniSobot::drive_backward(int speed = 150){
 
 bwd_motor1(speed);
 bwd_motor2(speed);
 
-if (duration > 0){
-  delay(duration);
-  drive_break();
-}
 }
 
 void MiniSobot::drive_break(){
@@ -142,29 +134,29 @@ analogWrite(motor2_pwm, 0);
 }
 
 
-void  MiniSobot::drive_curve_right(int speed = 255){
+void  MiniSobot::drive_curve_right(int speed = 150){
 fwd_motor1(speed);
 bwd_motor2(speed);
 }
 
 
-void  MiniSobot::drive_curve_left(int speed = 255){
+void  MiniSobot::drive_curve_left(int speed = 150){
 bwd_motor1(speed);
 fwd_motor2(speed);
 }
 
 
-void  MiniSobot::drive_curve_differential_right(int speed = 255, int percent = 90){
+void  MiniSobot::drive_curve_differential_right(int speed = 150, int percent = 70){
 
 fwd_motor1(speed);
-fwd_motor2(speed*(percent/100));
+fwd_motor2(speed*(percent/100.0));
 }
 
 
 
-void  MiniSobot::drive_curve_differential_left(int speed = 255,  int percent = 90){
+void  MiniSobot::drive_curve_differential_left(int speed = 150,  int percent = 70){
 fwd_motor2(speed);
-fwd_motor1(speed*(percent/100));
+fwd_motor1(speed*(percent/100.0));
 }
 
 
