@@ -139,7 +139,7 @@ void loop (){
 
 #### Description
 
-Drive in backward, at speed and duration defined by parameter, the range of speed values go 0 to 255, but values below 80 not are recommended. If you not set the speed parameter, default values are be used (150) and  if the duration is not set, the robot will moves forward forever.
+Drive in backward, at speed and duration defined by parameter, the range of speed values go 0 to 255, but values below 80 not are recommended. If you not set the speed parameter, default values are be used (150).=.
 
 #### Syntax
 

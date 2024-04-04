@@ -114,7 +114,7 @@ void MiniSobot::drive_forward(int speed = 150){
 fwd_motor1(speed);
 fwd_motor2(speed);
 
-}
+}...
 
 void MiniSobot::drive_backward(int speed = 150){
 
