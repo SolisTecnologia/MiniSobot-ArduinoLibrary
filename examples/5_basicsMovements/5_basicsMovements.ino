@@ -1,7 +1,7 @@
 /****************************************************************************
 MiniSobot Library
 Created By   : Rodrigo L. de Carvalho
-Version      : 1.1
+Version      : 1.2
 Company      : Solis Tecnologia
 
 basicsMovements.ino :
@@ -34,32 +34,32 @@ void setup(){
 // The loop function runs over and over again forever
 void loop (){
 
-    robot.drive_forward(200); // Forward
+    robot.drive_forward(150); // Forward
     delay(2000); // Wait a two seconds
     robot.drive_break(); // Stop the motors
     delay(2000); // Wait a two seconds
 
-    robot.drive_backward(200); // Backward
+    robot.drive_backward(150); // Backward
     delay(2000); // Wait a two seconds
     robot.drive_break(); // Stop the motors
     delay(2000); // Wait a two seconds
 
-    robot.drive_curve_left(200); // Left Curve  
+    robot.drive_curve_left(150); // Left Curve  
     delay(2000); // Wait a two seconds
     robot.drive_break(); // Stop the motors
     delay(2000); // Wait a two seconds
 
-    robot.drive_curve_right(200); // Right Curve
+    robot.drive_curve_right(150); // Right Curve
     delay(2000); // Wait a two seconds 
     robot.drive_break(); // Stop the motors
     delay(2000); // Wait a two seconds
 
-    robot.drive_curve_differential_left(200, 50); // Differential left curve
+    robot.drive_curve_differential_left(150, 60); // Differential left curve
     delay(2000); // Wait a two seconds
     robot.drive_break(); // Stop the motors
     delay(2000); // Wait a two seconds
 
-    robot.drive_curve_differential_right(255, 50); // Differential right curve
+    robot.drive_curve_differential_right(150, 60); // Differential right curve
     delay(2000); // Wait a two seconds
     robot.drive_break(); // Stop the motors
     delay(2000); // Wait a two seconds and repeat

@@ -1,7 +1,7 @@
 /****************************************************************************
 MiniSobot Library
 Created By   : Rodrigo L. de Carvalho
-Version      : 1.1
+Version      : 1.2
 Company      : Solis Tecnologia
 
 followLine.ino :
@@ -46,19 +46,19 @@ void loop (){
         
         // When right sensor and left sensor are detecting the line, the robot moves forward  
         if (right == 0 && left == 0){
-            robot.drive_forward(150);  // Moves robot forward    
+            robot.drive_forward(100);  // Moves robot forward    
             }
 
         // When right sensor is not detecting and left sensor 
         // is detecting the line, the robot makes the differential curve to the right  
         else if (right == 1 && left == 0){
-            robot.drive_curve_differential_right(150, 30); // Make a turn to the RIGHT using differential drive
+            robot.drive_curve_differential_right(100, 40); // Make a turn to the RIGHT using differential drive
         }
 
         // When right sensor is detecting and left sensor 
         // is not detecting the line, the robot makes the differential curve to the left
         else if (right == 0 && left == 1){
-            robot.drive_curve_differential_left(150, 30); // Make a turn to the LEFT using differential drive
+            robot.drive_curve_differential_left(100, 40); // Make a turn to the LEFT using differential drive
         }
 
         // Store the last sensor data in the flag

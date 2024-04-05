@@ -1,7 +1,7 @@
 /****************************************************************************
 MiniSobot Library
 Created By   : Rodrigo L. de Carvalho
-Version      : 1.1
+Version      : 1.2
 Company      : Solis Tecnologia
 
 defaultApplication.ino :
@@ -168,7 +168,7 @@ void mode_safe_car(){
 
     // When the Minibot approaches an obstacle, it reduces its speed
     if ((distance <= REDUCE_SPEED_DISTANCE) &&( distance > STOP_DISTANCE)) {
-            robot.drive_forward(100); // Moves Forward
+            robot.drive_forward(90); // Moves Forward
             flag_safe_direction = 1; // Set the flag True     
     }
 
@@ -180,15 +180,15 @@ void mode_safe_car(){
         
         // When flag is 2, change the direction move and reset the flag
         if(flag_change_direction == 2){
-          robot.drive_curve_right(255);   // Make a turn to the right 
-          delay(500); // Wait a half second
+          robot.drive_curve_right(130);   // Make a turn to the right 
+          delay(350); // Wait a half second
           flag_change_direction = 0; // Set the flag False
         }
       
         else{
           flag_change_direction++; // Increment the flag
-          robot.drive_curve_left(255); // Make a turn to the left
-          delay(500); // Wait a half second
+          robot.drive_curve_left(130); // Make a turn to the left
+          delay(350); // Wait a half second
         }
 
         flag_safe_direction = 0; // Set the flag False
@@ -201,7 +201,7 @@ void mode_safe_car(){
             delay(500);
             flag_safe_direction = 1; // Set the flag True
         }
-            robot.drive_forward(200);  // Moves Forward
+            robot.drive_forward(130);  // Moves Forward
     }
     delay(100); // Wait a 100 ms
 
@@ -223,19 +223,19 @@ void mode_follow_line (void){
 
         // When right sensor and left sensor are detecting the line, the robot moves forward  
         if (right == 0 && left == 0){
-            robot.drive_forward(150);  // Moves robot forward    
+            robot.drive_forward(100);  // Moves robot forward    
             }
 
         // When right sensor is not detecting and left sensor 
         // is detecting the line, the robot makes the differential curve to the right  
         else if (right == 1 && left == 0){
-            robot.drive_curve_differential_right(150, 30); // Make a turn to the RIGHT using differential drive
+            robot.drive_curve_differential_right(100, 40); // Make a turn to the RIGHT using differential drive
         }
 
         // When right sensor is detecting and left sensor 
         // is not detecting the line, the robot makes the differential curve to the left
         else if (right == 0 && left == 1){
-            robot.drive_curve_differential_left(150, 30); // Make a turn to the LEFT using differential drive
+            robot.drive_curve_differential_left(100, 40); // Make a turn to the LEFT using differential drive
         }
 
         // Store the last sensor data in the flag
@@ -250,7 +250,7 @@ void mode_follow_line (void){
 // Fun Mode
 void mode_fun (void){
 
-    robot.drive_curve_differential_right(150,60); // Make a turn to the LEFT using differential drive
+    robot.drive_curve_differential_right(130,60); // Make a turn to the LEFT using differential drive
     
     // iterate over the notes of the melody.
     for (int thisNote = 0; thisNote < notes * 2; thisNote = thisNote + 2) {
@@ -290,6 +290,6 @@ void mode_fun (void){
 
         // When the Minibot is too  close an obstacle, it stop 
         if (distance < STOP_DISTANCE) robot.drive_break(); // Stop the motors
-        else robot.drive_curve_differential_right(150,60); // Make a turn to the RIGHT using differential drive
+        else robot.drive_curve_differential_right(130,60); // Make a turn to the RIGHT using differential drive
     }
 }
